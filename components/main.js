@@ -48,32 +48,32 @@ module.config(function($routeProvider, routeResolverProvider) {
   }
 
   $routeProvider
-    .when('/agent', {
-      vars: {
-        title: 'Credential Agent',
-        navbar: false,
-        ngClass: {
-          rootContainer: {}
-        },
-        ngStyle: {
-          body: {'background-color': 'transparent'}
-        }
-      },
-      template: '<aio-agent></aio-agent>'
-    })
-    .when('/register', {
-      vars: {
-        title: 'Register',
-        navbar: false,
-        ngClass: {
-          rootContainer: {}
-        },
-        ngStyle: {
-          body: {'background-color': 'transparent'}
-        }
-      },
-      template: '<aio-register></aio-register>'
-    })
+    // .when('/agent', {
+    //   vars: {
+    //     title: 'Credential Agent',
+    //     navbar: false,
+    //     ngClass: {
+    //       rootContainer: {}
+    //     },
+    //     ngStyle: {
+    //       body: {'background-color': 'transparent'}
+    //     }
+    //   },
+    //   template: '<aio-agent></aio-agent>'
+    // })
+    // .when('/register', {
+    //   vars: {
+    //     title: 'Register',
+    //     navbar: false,
+    //     ngClass: {
+    //       rootContainer: {}
+    //     },
+    //     ngStyle: {
+    //       body: {'background-color': 'transparent'}
+    //     }
+    //   },
+    //   template: '<aio-register></aio-register>'
+    // })
     .when('/test/credentials/idpquery', {
       vars: {
         title: 'Mock Credential Consumer Query'
