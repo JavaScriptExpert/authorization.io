@@ -107,3 +107,14 @@ config.views.angular.optimize.templates.ignore.packages =
   config.views.angular.optimize.templates.ignore.packages.concat(
     ignorePackages);
 config.requirejs.config.shim.angular = {exports: 'angular', deps: []};
+
+config.requirejs.optimize.config.uglify2.compress = {
+  sequences: true,
+  dead_code: true,
+  conditionals: true,
+  booleans: true,
+  unused: true,
+  if_return: true,
+  join_vars: true,
+  drop_console: true
+};
