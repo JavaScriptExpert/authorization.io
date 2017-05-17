@@ -21,15 +21,15 @@ define([
 
 var module = angular.module('authio', [
   /* 'authio.idp-test',*/
-  'bedrock.alert', 'bedrock.form',/* 'bedrock-navbar', */ 'ngError']);
+  'ngRoute', 'bedrock.alert', 'bedrock.form',/* 'bedrock-navbar', 'ngError'*/]);
 
 Array.prototype.slice.call(arguments, 1).forEach(function(register) {
   register(module);
 });
 
 /* @ngInject */
-module.config(function($routeProvider, routeResolverProvider) {
-  routeResolverProvider.add('authio-resolver', resolve);
+module.config(function($routeProvider/*, routeResolverProvider*/) {
+  //routeResolverProvider.add('authio-resolver', resolve);
   /* @ngInject */
   function resolve($rootScope, $route) {
     var vars = $route.current.vars;

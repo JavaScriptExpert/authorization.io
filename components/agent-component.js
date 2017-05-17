@@ -280,6 +280,7 @@ function Ctrl(
       self.loading = false;
     }
     $scope.$apply();
+    console.log('agent done', performance.now());
   });
 
   function _getOwnerId(identity) {
