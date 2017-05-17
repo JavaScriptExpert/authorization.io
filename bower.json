@@ -5,6 +5,7 @@
   "description": "authorization.io website bower dependencies.",
   "dependencies": {
     "angular-cookie": "~4.0.6",
+    "angular-stackables": "digitalbazaar/angular-stackables#fix-angular-1.6-history",
     "bedrock-angular": "digitalbazaar/bedrock-angular#angular-1.6",
     "bedrock-angular-alert": "^2.0.0",
     "bedrock-angular-credential": "^2.0.0",
