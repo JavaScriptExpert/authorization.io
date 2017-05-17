@@ -18,7 +18,7 @@ function register(module) {
 
 /* @ngInject */
 function Ctrl(
-  $location, $sce, $rootScope, $scope, $window,
+  $document, $location, $sce, $rootScope, $scope, $window,
   aioIdentityService, aioOperationService, aioPermissionService,
   aioUtilService, brAlertService, config) {
   var self = this;
@@ -105,7 +105,8 @@ function Ctrl(
       $scope.$apply();
 
       // get iframe handle
-      var iframe = angular.element('iframe[name="repo"]');
+      var iframe = angular.element($document[0].querySelector(
+        'iframe[name="repo"]'));
       var repoHandle = iframe[0].contentWindow;
 
       // delegate to Repo
