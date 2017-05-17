@@ -56,3 +56,21 @@ config.views.vars['bedrock-angular-credential'].libraries.default = {
 // lower minimum wait time for proofs
 config.authio.proofs.proofOfPatience.minWaitTimeInSecs = 2;
 config.authio.proofs.proofOfPatience.maxWaitTimeInSecs = 3;
+
+config.requirejs.bower.ignore = config.requirejs.bower.ignore.concat([
+  // 'async',
+  // 'lodash',
+  'bedrock-angular-card-displayer',
+  'bedrock-angular-credential',
+  'bedrock-angular-filters',
+  'bedrock-angular-identity-composer',
+  'bedrock-angular-media-query',
+  'bedrock-angular-navbar',
+  'bedrock-angular-resolver',
+  'bedrock-angular-resource',
+  'bedrock-angular-selector',
+  'bedrock-angular-session',
+  'bedrock-angular-ui',
+  'authio-demo'
+]);
+// console.log('ZZZZZZZZ', config.requirejs.bower.ignore);
