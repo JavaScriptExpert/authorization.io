@@ -6,13 +6,12 @@
  */
 define([
   'angular',
-  'async',
   'did-io',
   'forge',
   'jsonld',
   'jsonld-signatures',
   'node-uuid'],
-  function(angular, async, didio, forge, jsonld, jsigs, uuid) {
+  function(angular, didio, forge, jsonld, jsigs, uuid) {
 
 'use strict';
 
@@ -34,7 +33,6 @@ function factory($http) {
 
   // initialize libs using the AMD-loaded helper libraries
   jsigs = jsigs();
-  jsigs.use('async', async);
   jsigs.use('forge', forge);
   jsigs.use('jsonld', jsonld);
   didio = didio();

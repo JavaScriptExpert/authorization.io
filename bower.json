@@ -22,7 +22,7 @@
     "did-io": "^0.6.1",
     "es6-promise": "^2.0.1",
     "forge": "~0.6.40",
-    "jsonld-signatures": "^1.1.3",
+    "jsonld-signatures": "digitalbazaar/jsonld-signatures#remove-async",
     "node-uuid": "^1.4.3",
     "lodash": "^4.6.1",
     "ng-error": "^1.0.2",

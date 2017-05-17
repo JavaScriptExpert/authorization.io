@@ -65,7 +65,7 @@ const ignorePackages = [
 //  "angular-sanitize",
 //  "angular-stackables",
   "ui-select",
-//  "async",
+  "async",
 //  "bedrock-angular-alert",
   "bedrock-angular-card-displayer",
   "bedrock-angular-credential",
