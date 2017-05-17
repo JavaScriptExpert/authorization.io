@@ -59,7 +59,7 @@ config.authio.proofs.proofOfPatience.maxWaitTimeInSecs = 3;
 
 config.requirejs.bower.ignore = config.requirejs.bower.ignore.concat([
   // 'async',
-  // 'lodash',
+  'lodash',
   'bedrock-angular-card-displayer',
   'bedrock-angular-credential',
   'bedrock-angular-filters',

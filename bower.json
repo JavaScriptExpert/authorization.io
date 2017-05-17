@@ -5,7 +5,7 @@
   "description": "authorization.io website bower dependencies.",
   "dependencies": {
     "angular-cookie": "~4.0.6",
-    "bedrock-angular": "^2.7.0",
+    "bedrock-angular": "digitalbazaar/bedrock-angular#angular-1.6",
     "bedrock-angular-alert": "^2.0.0",
     "bedrock-angular-credential": "^2.0.0",
     "bedrock-angular-footer": "^3.1.0",
@@ -29,6 +29,12 @@
     "bedrock-angular-media-query": "^1.0.1"
   },
   "resolutions": {
-    "es6-promise": "~2.1"
+    "es6-promise": "~2.1",
+    "bedrock-angular": "angular-1.6",
+    "bedrock-angular-modal": "^4.0.0",
+    "angular-animate": "~1.6.4",
+    "angular-route": "~1.6.4",
+    "angular-sanitize": "~1.6.4",
+    "angular": "~1.6.4"
   }
 }

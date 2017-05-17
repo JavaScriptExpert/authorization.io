@@ -4,7 +4,7 @@
  * Copyright (c) 2017, Accreditrust Technologies, LLC
  * All rights reserved.
  */
-define(['lodash'], function(_) {
+define(['angular'], function(angular) {
 
 'use strict';
 
@@ -159,7 +159,7 @@ function factory() {
       origin: origin,
       granted: true
     });
-    return _.difference(permissions, granted).length === 0;
+    return diffArray(permissions, granted).length === 0;
   };
 
   /**
@@ -176,7 +176,7 @@ function factory() {
     }
     permissions.forEach(function(permission) {
       if(permission in PERMISSIONS) {
-        meta[permission] = _.clone(PERMISSIONS[permission]);
+        meta[permission] = angular.copy(PERMISSIONS[permission]);
       } else {
         throw new Error('Invalid permission `' + permission + '`.');
       }
@@ -192,6 +192,37 @@ function factory() {
   function setAuthorizations(authorizations) {
     localStorage.setItem(
       STORAGE_KEYS.AUTHORIZATIONS, JSON.stringify(authorizations));
+  }
+
+  // NOTE: from https://github.com/jonschlinkert/arr-diff
+  function diffArray(one, two) {
+    if(!Array.isArray(two)) {
+      return one.slice();
+    }
+
+    var tlen = two.length;
+    var olen = one.length;
+    var idx = -1;
+    var arr = [];
+
+    while(++idx < olen) {
+      var ele = one[idx];
+
+      var hasEle = false;
+      for(var i = 0; i < tlen; i++) {
+        var val = two[i];
+
+        if(ele === val) {
+          hasEle = true;
+          break;
+        }
+      }
+
+      if(hasEle === false) {
+        arr.push(ele);
+      }
+    }
+    return arr;
   }
 
   return service;
