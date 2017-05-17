@@ -21,7 +21,7 @@ define([
 
 var module = angular.module('authio', [
   /* 'authio.idp-test',*/
-  'bedrock.alert', 'bedrock.form', 'bedrock-navbar', 'ngError']);
+  'bedrock.alert', 'bedrock.form',/* 'bedrock-navbar', */ 'ngError']);
 
 Array.prototype.slice.call(arguments, 1).forEach(function(register) {
   register(module);
