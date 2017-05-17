@@ -5,7 +5,7 @@
  * All rights reserved.
  */
 /* global requirejs */
-define(['angular', 'node-uuid', 'lodash'], function(angular, uuid, _) {
+define(['angular', 'node-uuid'], function(angular, uuid) {
 
 'use strict';
 
@@ -293,11 +293,14 @@ function Ctrl(
   function _isCryptoKeyRequest(query) {
     // query may have `id` set -- this doesn't affect whether or not it is
     // a crypto key request
-    query = _.assign({}, query);
+    query = angular.extend({}, query);
     if('id' in query) {
       query.id = '';
     }
-    return _.isEqual(query, CRYPTO_KEY_REQUEST);
+    return (query.id === '' &&
+      query['@context'] === 'https://w3id.org/identity/v1' &&
+      query.publicKey === '' && Object.keys(query).length === 3
+    );
   }
 
   function _sendSignedIdentity(identity) {
