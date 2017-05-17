@@ -108,6 +108,7 @@ config.views.angular.optimize.templates.ignore.packages =
     ignorePackages);
 config.requirejs.config.shim.angular = {exports: 'angular', deps: []};
 
+config.requirejs.optimize.config.uglify2.mangle = true;
 config.requirejs.optimize.config.uglify2.compress = {
   sequences: true,
   dead_code: true,
