@@ -57,7 +57,7 @@ config.views.vars['bedrock-angular-credential'].libraries.default = {
 config.authio.proofs.proofOfPatience.minWaitTimeInSecs = 2;
 config.authio.proofs.proofOfPatience.maxWaitTimeInSecs = 3;
 
-config.requirejs.bower.ignore = config.requirejs.bower.ignore.concat([
+const ignorePackages = [
   "angular-animate",
   "angular-bootstrap",
   "angular-cookie",
@@ -92,11 +92,18 @@ config.requirejs.bower.ignore = config.requirejs.bower.ignore.concat([
   "jquery",
 //  "jsonld",
 //  "jsonld-signatures",
+
   "lodash",
   "ng-error",
   "ng-multi-transclude",
 //  "node-uuid",
 //  "authio",
   "authio-demo"
-]);
+];
+
+config.requirejs.bower.ignore =
+  config.requirejs.bower.ignore.concat(ignorePackages);
+config.views.angular.optimize.templates.ignore.packages =
+  config.views.angular.optimize.templates.ignore.packages.concat(
+    ignorePackages);
 config.requirejs.config.shim.angular = {exports: 'angular', deps: []};
