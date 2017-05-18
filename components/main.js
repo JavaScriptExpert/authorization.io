@@ -29,10 +29,9 @@ Array.prototype.slice.call(arguments, 1).forEach(function(register) {
 });
 
 /* @ngInject */
-module.config(function($routeProvider/*, routeResolverProvider*/) {
-  //routeResolverProvider.add('authio-resolver', resolve);
+module.config(function($routeProvider) {
   /* @ngInject */
-  function resolve($rootScope, $route) {
+  function setupRootContainer($rootScope, $route) {
     var vars = $route.current.vars;
 
     if(!vars || !('ngClass' in vars)) {
@@ -60,6 +59,9 @@ module.config(function($routeProvider/*, routeResolverProvider*/) {
           body: {'background-color': 'transparent'}
         }
       },
+      resolve: {
+        setupRootContainer: setupRootContainer
+      },
       template: '<aio-agent></aio-agent>'
     })
     .when('/register', {
@@ -73,11 +75,17 @@ module.config(function($routeProvider/*, routeResolverProvider*/) {
           body: {'background-color': 'transparent'}
         }
       },
+      resolve: {
+        setupRootContainer: setupRootContainer
+      },
       template: '<aio-register></aio-register>'
     })
     .when('/test/credentials/idpquery', {
       vars: {
         title: 'Mock Credential Consumer Query'
+      },
+      resolve: {
+        setupRootContainer: setupRootContainer
       },
       templateUrl: requirejs.toUrl('authio/idp-test/idp-test.html')
     })
@@ -85,11 +93,17 @@ module.config(function($routeProvider/*, routeResolverProvider*/) {
       vars: {
         title: 'Mock Credential Consumer Query Results'
       },
+      resolve: {
+        setupRootContainer: setupRootContainer
+      },
       templateUrl: requirejs.toUrl('authio/idp-test/idp-test.html')
     })
     .when('/test/credentials/stored-credential', {
       vars: {
         title: 'Mock Credential Storage Results'
+      },
+      resolve: {
+        setupRootContainer: setupRootContainer
       },
       templateUrl: requirejs.toUrl('authio/idp-test/idp-test.html')
     });
