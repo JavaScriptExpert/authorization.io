@@ -4,7 +4,13 @@
   "scripts": {
     "start": "node authorization.dev.js",
     "test": "node authorization.dev.js test",
-    "postinstall": "bower install && node authorization.dev.js compile-less"
+    "postinstall": "bower install && npm run dev-compile-less",
+    "dev-compile-less": "node authorization.dev.js compile-less && node authorization.dev.agent.js compile-less",
+    "dev-optimize": "node authorization.dev.js optimize && node authorization.dev.agent.js optimize",
+    "demo-compile-less": "node demo.authorization.io.js compile-less && node demo.authorization.io.agent.js compile-less",
+    "demo-optimize": "node demo.authorization.io.js optimize && node demo.authorization.io.agent.js optimize",
+    "authio-compile-less": "node authorization.io.js compile-less && node authorization.io.agent.js compile-less",
+    "authio-optimize": "node authorization.io.js optimize && node authorization.io.agent.js optimize"
   },
   "repository": {
     "type": "git",

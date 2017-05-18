@@ -18,10 +18,10 @@
       ((route.vars.title && (siteTitle + ': ' + route.vars.title)) || siteTitle)"></title>
     <link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700|Droid+Sans+Mono" rel="stylesheet" type="text/css">
     {% if minify %}
-      <link href="/css/bedrock-views.min.css" rel="stylesheet" type="text/css" />
+      <link href="/css/agent/bedrock-views.min.css" rel="stylesheet" type="text/css" />
     {% else %}
       {% block css %}
-      <link href="/css/bedrock-views.css" rel="stylesheet" type="text/css" />
+      <link href="/css/agent/bedrock-views.css" rel="stylesheet" type="text/css" />
       {% endblock %}
     {% endif %}
 
@@ -32,9 +32,9 @@
     {% if pageLayout != "error" %}
       {% include "data.html" %}
       {% if minify %}
-        <script defer src="/requirejs/main.min.js"></script>
+        <script defer src="/requirejs/agent/main.min.js"></script>
       {% else %}
-        <script defer data-main="/requirejs/main.js" src="/bower-components/requirejs/require.js"></script>
+        <script defer data-main="/requirejs/agent/main.js" src="/bower-components/requirejs/require.js"></script>
       {% endif %}
     {% endif %}
   </head>
